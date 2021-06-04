@@ -5,3 +5,32 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+async function people() {
+
+    await fetch('https://robsonalves-srvapp.azurewebsites.net/api/peoples')
+        .then(response => response.json())
+        .then(people => {
+            document.getElementById('nickname').innerHTML = people.nickname;
+            document.getElementById('descriptionEmail').innerHTML = people.email;
+        });
+
+}
+
+people();
+
+async function socialMedias() {
+
+    await fetch('https://robsonalves-srvapp.azurewebsites.net/api/socialmedia')
+        .then(response => response.json())
+        .then(socialMedia => {
+            document.getElementById('linkedin').href = `${socialMedia.linkedIn}`;
+            document.getElementById('github').href = `${socialMedia.github}`;
+            document.getElementById('discord').href = `${socialMedia.discord}`;
+            document.getElementById('emailCall').href = `mailto:${socialMedia.email}?subject=Mail from RobsonDev`;
+        });
+
+}
+
+
+socialMedias();
