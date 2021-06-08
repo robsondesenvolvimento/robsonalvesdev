@@ -6,9 +6,11 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
+let urlApi = "https://robsonalves-dev-br-srvapp.azurewebsites.net";
+
 async function people() {
 
-    await fetch('https://robsonalves-srvapp.azurewebsites.net/api/peoples')
+    await fetch(`${urlApi}/api/peoples`)
         .then(response => {
             if (!response.ok)
                 throw new Error(`Status: ${response.status}, StatusText: ${response.statusText}`);                
@@ -29,7 +31,7 @@ people();
 
 async function socialMedias() {
 
-    await fetch('https://robsonalves-srvapp.azurewebsites.net/api/socialmedia')
+    await fetch(`${urlApi}/api/socialmedia`)
         .then(response => {
             if (!response.ok)
                 throw new Error(`Status: ${response.status}, StatusText: ${response.statusText}`);                
