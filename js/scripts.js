@@ -18,8 +18,8 @@ async function people() {
         })
         .then(response => response.json())
         .then(people => {
-            document.getElementById('nickname').innerHTML = people.nickname;
-            document.getElementById('descriptionEmail').innerHTML = people.email;
+            $("#nickname").html(`${people.nickname}`);
+            $("#descriptionEmail").html(`${people.email}`);
         })
         .catch(error => {
             console.log(`${error.message}`);
@@ -39,10 +39,10 @@ async function socialMedias() {
         })
         .then(response => response.json())
         .then(socialMedia => {
-            document.getElementById('linkedin').href = `${socialMedia.linkedIn}`;
-            document.getElementById('github').href = `${socialMedia.github}`;
-            document.getElementById('discord').href = `${socialMedia.discord}`;
-            document.getElementById('emailCall').href = `mailto:${socialMedia.email}?subject=Mail from RobsonDev`;
+            $("#linkedin").attr("href",`${socialMedia.linkedIn}`);
+            $("#github").attr("href",`${socialMedia.github}`);
+            $("#discord").attr("href",`${socialMedia.discord}`);
+            $("#emailCall").attr("href",`mailto:${socialMedia.email}?subject=Mail from RobsonDev`);
         })
         .catch(error => {
             console.log(`${error.message}`);
